@@ -16,7 +16,6 @@
           buildInputs = with pkgs; [
             nodejs_24
             pnpm_10
-            wrangler
           ];
         };
       }

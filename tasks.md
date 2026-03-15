@@ -1,7 +1,7 @@
 # ブログ構築タスク一覧
 
 ## Phase 1: Astroプロジェクトの初期セットアップ
-- [ ] `pnpm create astro@latest` でblogテンプレートからプロジェクト作成
+- [x] `pnpm create astro@latest` でblogテンプレートからプロジェクト作成
 - [ ] `astro.config.mjs` の基本設定
 - [ ] `jj describe -m "feat: initialize Astro blog project"` && `jj new`
 

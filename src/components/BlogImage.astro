@@ -1,0 +1,17 @@
+---
+import { getMediaPath } from '../lib/media';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+const { src, alt, width, height } = Astro.props;
+const resolvedSrc = src.startsWith('/') ? src : getMediaPath(src);
+---
+
+<figure>
+  <img src={resolvedSrc} alt={alt} width={width} height={height} loading="lazy" />
+</figure>

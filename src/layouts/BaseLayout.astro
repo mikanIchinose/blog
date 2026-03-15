@@ -7,6 +7,7 @@ interface Props {
 
 const { title, description = '', ogImage } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const cfAnalyticsToken = import.meta.env.CF_WEB_ANALYTICS_TOKEN;
 ---
 
 <!doctype html>
@@ -30,6 +31,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
   </head>
   <body>
     <slot />
+    {cfAnalyticsToken && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token":"${cfAnalyticsToken}"}`}
+      />
+    )}
   </body>
 </html>
 
